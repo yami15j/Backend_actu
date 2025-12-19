@@ -1,7 +1,7 @@
 {
   "name": "backend-actu",
   "version": "1.0.0",
-  "description": "Backend Express para despliegue en Render",
+  "description": "Backend Express para Render",
   "main": "server.js",
   "scripts": {
     "start": "node server.js"
