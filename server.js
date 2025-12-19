@@ -2,14 +2,16 @@ const express = require('express');
 const cors = require('cors');
 
 const app = express();
-const PORT = 3001;
+
+// 🚨 Render asigna el puerto automáticamente
+const PORT = process.env.PORT || 3001;
 
 app.use(cors());
 app.use(express.json());
 
 let mensajes = [];
 
-// Endpoint de prueba
+// ✅ Endpoint de prueba
 app.get('/api/estado', (req, res) => {
   res.json({
     status: 'Backend activo',
@@ -17,16 +19,16 @@ app.get('/api/estado', (req, res) => {
   });
 });
 
-// Obtener mensajes
+// ✅ Obtener mensajes
 app.get('/api/mensajes', (req, res) => {
   res.json(mensajes);
 });
 
-// Guardar mensaje
+// ✅ Guardar mensaje
 app.post('/api/mensajes', (req, res) => {
   const { texto } = req.body;
 
-  if (!texto) {
+  if (!texto || texto.trim() === '') {
     return res.status(400).json({ error: 'Mensaje vacío' });
   }
 
@@ -39,6 +41,7 @@ app.post('/api/mensajes', (req, res) => {
   res.json(nuevoMensaje);
 });
 
+// 🚀 INICIO DEL SERVIDOR
 app.listen(PORT, () => {
-  console.log(`✅ Backend corriendo en http://localhost:${PORT}`);
+  console.log(`✅ Backend corriendo en puerto ${PORT}`);
 });
