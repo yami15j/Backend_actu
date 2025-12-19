@@ -1,4 +1,4 @@
-import { NestFactory } from '@nestjs/core'; 
+/*import { NestFactory } from '@nestjs/core'; 
 import { AppModule } from './app.module';
 
 async function bootstrap() {
@@ -17,3 +17,4 @@ async function bootstrap() {
   console.log(`🚀 Backend Nest corriendo en http://localhost:${PORT}/api`);
 }
 bootstrap();
+*/
